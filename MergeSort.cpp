@@ -40,7 +40,7 @@ void MergeSort(int arr[], int l, int h)
 }
 int main()
 {
-    int arr[] = {5, 4, 6, 2, 1, 3, 7};
+    int arr[] = {5, 4, 6, 8, 1, 3, 7};
     MergeSort(arr, 0, 6);
     printArray(arr, 7);
     return 0;
