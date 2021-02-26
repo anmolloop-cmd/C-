@@ -24,33 +24,36 @@ int main()
             vector<long>::iterator ptr;
             ptr = s1.begin();
             long S = 0;
-            while (*ptr < S)
+            while (*ptr + S < k[i])
             {
                 S += *ptr;
                 ptr++;
             }
+            long f = *ptr;
             s1.erase(ptr);
             long T = k[i] - S;
             s1.insert(ptr, T);
-            s1.insert(ptr + 1, *ptr - T);
+            s1.insert(ptr + 1, f - T);
             long a = *max_element(s1.begin(), s1.end());
             long b = *max_element(s2.begin(), s2.end());
             cout << a * b << "\n";
+            vector<long>::iterator ptr2;
         }
         if (ch[i] == 86)
         {
             vector<long>::iterator ptr1;
             ptr1 = s2.begin();
             long S1 = 0;
-            while (*ptr1 < S1)
+            while (*ptr1 + S1 < k[i])
             {
                 S1 += *ptr1;
                 ptr1++;
             }
+            long f = *ptr1;
             s2.erase(ptr1);
             long T = k[i] - S1;
             s2.insert(ptr1, T);
-            s2.insert(ptr1 + 1, *ptr1 - T);
+            s2.insert(ptr1 + 1, f - T);
             long a = *max_element(s1.begin(), s1.end());
             long b = *max_element(s2.begin(), s2.end());
             cout << a * b << "\n";
